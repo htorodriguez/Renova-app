@@ -1,6 +1,6 @@
 <head>
 
-<title>World Bank Data Dashboard</title>
+<title>Renova Dashboard</title>
 
 <!--import script files needed from plotly and bootstrap-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,7 +15,7 @@
 
 <!--navbar links-->     
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-   <a class="navbar-brand" href="#">World Bank Dashboard</a>
+   <a class="navbar-brand" href="#">Renova: clever indoor lighting</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" 
   data-target="#navbarTogglerDemo02" 
   aria-controls="navbarTogglerDemo02" aria-expanded="false" 
@@ -26,14 +26,19 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="https://www.udacity.com">Udacity</a>
+        <a class="nav-link" href="https://maps.nrel.gov/nsrdb-viewer">NSRDB</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://data.worldbank.org/">World Bank Data</a>
+        <a class="nav-link" href="https://www.acolgen.org.co/preciosenergia/">Costo de la Electricidad</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://renovadotengineering.wordpress.com/blog-2/">Blog</a>
       </li>
     </ul>
   </div>
 </nav>
+
+
 
 <!--middle section-->       
 <div class="row">
@@ -41,10 +46,10 @@
     <!--social media buttons column-->      
     <div class="col-1 border-right">
         <div id="follow-me" class="mt-3">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/htorodriguez">
                 <img src="/static/img/linkedinlogo.png" alt="linkedin" class="img-fluid mb-4 ml-2">
             </a>
-            <a href="#">
+            <a href="https://github.com/htorodriguez">
                 <img src="/static/img/githublogo.png" alt="github" class="img-fluid ml-2">
             </a>
         </div>
@@ -56,26 +61,65 @@
         <!--chart descriptions-->       
         <div id="middle-info" class="mt-3">
 
-            <h4 id="tag-line">Franci PUZZAAAA</h4>
-            <h4 id="tag-line" class="text-muted">Top 10 World Economies Land Use</h4>
-            
+            <h4 id="tag-line">Cuando y como complementar la luz solar en la region de Bogota</h4>
+            <h5 id="tag-line" class="text-muted">Solar irradiation in Bogota from NSRDB</h5>
+            <p> Esta pagina le ayudara a proyectar su sistema de iluminacion artificial para complementar la luz solar</p>
+            <p> Los datos provienen de <a  href="https://maps.nrel.gov/nsrdb-viewer">NSRDB</a> </p>
         </div>
         
         <!--charts-->       
         <div id="charts" class="container mt-3 text-center">
                     
             <!--top two charts-->       
+            
+            <div class="row">
+                <h5 id="tag-line">Datos ambientales (2008 a 2018) agregados por mes</h5>
+            </div>
+            <div class="row">
+                <h6 id="tag-line" class="text-muted">Mean environmental (2008-2018) data aggregated by month</h6>
+            </div>
+            <div class="row">
+                
+                <div class="col-6">
+                    <div id="{{ids[4]}}"></div>
+                </div>
+                <div class="col-6">
+                    <div id="{{ids[5]}}"></div>
+                </div>
+           </div>     
             <div class="row">
                 <div class="col-6">
-                    <div id="{{ids[0]}}"></div>
+                    <div id="{{ids[6]}}"></div>
                 </div>
                 <div class="col-6">
-                    <div id="{{ids[1]}}"></div>
+                    <div id="{{ids[7]}}"></div>
                 </div>
+            <p> Para saber que parte de la luz solar es util para la agricultura en la region de Bogota ir al <a href="https://renovadotengineering.wordpress.com/blog-2/">Blog</a></p>
             </div>
 
             <!--bottom two charts-->        
-            <div class="row mb-6">
+            <div class="row">
+                <h5 id="tag-line">Distribucion espectral en 2018</h5>
+            </div>
+            <div class="row">
+                <h6 id="tag-line" class="text-muted">Spectrally resolved irradiation</h6>
+            </div>            
+            
+            <div class="row mb-6">                 
+                <div class="col-6"> 
+                    <div id="chart3">
+                        <div id="{{ids[0]}}"></div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="chart4">
+                        <div id="{{ids[1]}}"></div>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- fifth and sixth chart-->        
+            <div class="row mb-6">                 
                 <div class="col-6"> 
                     <div id="chart3">
                         <div id="{{ids[2]}}"></div>
@@ -86,15 +130,6 @@
                         <div id="{{ids[3]}}"></div>
                     </div>
                 </div>
-            </div>
-           
-            <!--Create another row and place a fifth chart in that row-->        
-            <div class="row mb-6">
-              <div class="col-12">
-                <div id="chart5">
-                    <div id="{{ids[4]}}"></div>
-                </div>
-              </div>
             </div>
                   
         </div>

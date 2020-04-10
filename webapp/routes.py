@@ -1,13 +1,13 @@
-from worldbankapp import app
+from webapp import app
 import json, plotly
 from flask import render_template
-from wrangling_scripts.wrangle_data import return_figures
+from wrangling_scripts.wrangle_data import return_figures_renova
 
 @app.route('/')
 @app.route('/index')
 def index():
 
-    figures = return_figures()
+    figures = return_figures_renova()
 
     # plot ids for the html id tag
     ids = ['figure-{}'.format(i) for i, _ in enumerate(figures)]
